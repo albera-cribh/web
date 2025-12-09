@@ -27,23 +27,11 @@ module.exports = defineConfig({
     }
   },
   
-  // 生产环境配置
+  // 生产环境配置 - 简化配置，避免冲突
   chainWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
-      // 确保所有资源使用相对路径
-      // 对于多页面应用，需要为每个页面的HTML插件单独配置
-      Object.keys(module.exports.pages).forEach(page => {
-        config.plugin(`html-${page}`).tap(args => {
-          args[0].minify = {
-            removeComments: true,
-            collapseWhitespace: true,
-            removeAttributeQuotes: true,
-            collapseBooleanAttributes: true,
-            removeScriptTypeAttributes: true
-          }
-          return args
-        })
-      })
+      // 移除可能导致路径冲突的配置
+      // 让publicPath配置自动处理所有资源路径
     }
   },
   
