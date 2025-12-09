@@ -31,15 +31,18 @@ module.exports = defineConfig({
   chainWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 确保所有资源使用相对路径
-      config.plugin('html').tap(args => {
-        args[0].minify = {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          collapseBooleanAttributes: true,
-          removeScriptTypeAttributes: true
-        }
-        return args
+      // 对于多页面应用，需要为每个页面的HTML插件单独配置
+      Object.keys(module.exports.pages).forEach(page => {
+        config.plugin(`html-${page}`).tap(args => {
+          args[0].minify = {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            collapseBooleanAttributes: true,
+            removeScriptTypeAttributes: true
+          }
+          return args
+        })
       })
     }
   },
@@ -47,7 +50,7 @@ module.exports = defineConfig({
   devServer: {
     historyApiFallback: {
       rewrites: [
-        { from: /^\/$/, to: '/index.html' },
+        { from: /^\//, to: '/index.html' },
         { from: /^\/A\//, to: '/A/' }
       ]
     },
