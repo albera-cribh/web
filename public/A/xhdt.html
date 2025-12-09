@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>协会动态 - 南宁市食品药品安全管理服务协会</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部横幅 */
+        .top-banner {
+            background: #f0f0f0;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .banner-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-left img {
+            width: 80px;
+            height: 25px;
+        }
+
+        .banner-left span {
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* 网站头部 */
+        .header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 800px;
+            height: 125px;
+            margin-right: 20px;
+        }
+
+        .site-info h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #004987;
+            font-weight: bold;
+        }
+
+        .site-info p {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .search-box {
+            display: flex;
+        }
+
+        .search-input {
+            padding: 8px 12px;
+            border: 2px solid #004987;
+            border-radius: 4px 0 0 4px;
+            width: 250px;
+            font-size: 14px;
+        }
+
+        .search-btn {
+            padding: 8px 20px;
+            background-color: #004987;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #004987;
+        }
+
+        /* 导航菜单 */
+        .main-nav {
+            background: linear-gradient(to right, #004987, #004987);
+            border-bottom: 2px solid #0d47a1;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: #1ABC9C;
+        }
+
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: white;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #004987;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #333;
+        }
+
+        /* 主要内容区域 */
+        .content-section {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .content-layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 左侧菜单 */
+        .left-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-menu,
+        .contact-info {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .menu-title {
+            background-color: #004987;
+            color: white;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .sub-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sub-link {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .sub-link:hover,
+        .sub-link.active {
+            background-color: #f5f5f5;
+            color: #004987;
+        }
+
+        .sub-link:last-child {
+            border-bottom: none;
+        }
+
+        /* 联系我们 */
+        .contact-details {
+            padding: 20px;
+        }
+
+        .contact-details p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .qrcode {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .qrcode img {
+            width: 120px;
+            height: 120px;
+        }
+
+        /* 右侧内容 */
+        .right-content {
+            flex: 1;
+        }
+
+        .content-box {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 30px;
+        }
+
+        .content-box h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+            border-bottom: 2px solid #004987;
+            padding-bottom: 10px;
+        }
+
+        /* 简化的新闻列表样式 */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #666;
+            margin-right: 15px;
+            white-space: nowrap;
+        }
+
+        .news-title {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .news-title:hover {
+            color: #004987;
+        }
+
+        /* 分页 */
+        .pagination {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border: 1px solid #e0e0e0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .pagination a:hover,
+        .pagination a.active {
+            background-color: #004987;
+            color: white;
+            border-color: #004987;
+        }
+
+        /* 底部信息 */
+        .footer {
+            background-color: #004987;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        .footer-info p {
+            margin: 8px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="xhdt-container">
+        <!-- 顶部横幅 -->
+        <div class="top-banner">
+            <div class="container">
+                <div class="banner-left">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjM1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01MCwxMEwxMCwyNUw1MCw0MEw5MCwyNUw1MCwxMCIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9InVybCgjc3ZnX2xpbmVhcikiLz48dGV4dCB4PSI1MCIgeT0iMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzE1NjVjMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5q+U6Z+z55So6K+m5ZCI5p2D6YO95LiO5LiN5rW3PC90ZXh0Pjwvc3ZnPg=="
+                        alt="关注食品安全">
+                    <span>关注食品安全 共筑健康生活</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 网站头部 -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="./assets/logo.jpg" alt="南宁市食品药品安全管理服务协会">
+                        <div class="site-info">
+                            <!-- <h1>南宁市食品药品安全管理服务协会</h1>
+                            <p>Nanning Food and Drug Safety Management Service Association</p> -->
+                        </div>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" placeholder="请输入关键词" class="search-input">
+                        <button class="search-btn">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 导航菜单 -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/A/xhgk.html" class="nav-link">协会概况</a></li>
+                    <li><a href="/A/zxyw.html" class="nav-link">最新要闻</a></li>
+                    <li><a href="/A/tzgg.html" class="nav-link">通知公告</a></li>
+                    <li><a href="/A/xhdt.html" class="nav-link active">协会动态</a></li>
+                    <li><a href="/A/hyfc.html" class="nav-link">会员风采</a></li>
+                    <li><a href="/A/zzfg.html" class="nav-link">政策法规</a></li>
+                    <li><a href="/A/fxgl.html" class="nav-link">服务信息</a></li>
+                    <li><a href="/A/xyzh.html" class="nav-link">消费指南</a></li>
+                    <li><a href="/A/zzfw.html" class="nav-link">在线服务</a></li>
+                    <li><a href="/A/lxwm.html" class="nav-link">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 面包屑导航 -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="/">首页</a> &gt; <span>协会动态</span>
+            </div>
+        </div>
+
+        <!-- 主要内容区域 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-layout">
+                    <!-- 左侧菜单 - 简化版 -->
+                    <div class="left-sidebar">
+                        <div class="sidebar-menu">
+                            <h3 class="menu-title">协会动态</h3>
+                        </div>
+
+                        <!-- 联系我们 -->
+                        <div class="contact-info">
+                            <h3 class="menu-title">联系我们</h3>
+                            <div class="contact-details">
+                                <p>地址：南宁市青秀区东葛路118号南宁青秀万达广场西3栋3419号</p>
+                                <p></p>
+                                <p>网址：www.hifsa.cn</p>
+                                <p>邮箱：nnspypaqglfwxh@163.com</p>
+                                <div class="qrcode">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwZmZmZiIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmaWxsPSIjMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7vvJo8L3RleHQ+PC9zdmc+"
+                                        alt="二维码">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧内容 - 简化版列表 -->
+                    <div class="right-content">
+                        <div class="content-box">
+                            <h2>协会动态</h2>
+
+                            <!-- 简化的新闻列表 -->
+                            <div class="news-list">
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/26</div>
+                                    <a href="#news1" class="news-title">协会成功举办《食品安全法》《食品生产通用卫生规范》专题培训</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/27</div>
+                                    <a href="#news2" class="news-title">喜讯！海南省食品安全协会加入"中国食品安全产业"战略合作机构</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/20</div>
+                                    <a href="#news3" class="news-title">关于召开《餐饮生产企业食品安全管理应用研究》国际技术专家评审会的通知</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/18</div>
+                                    <a href="#news4" class="news-title">关于开展《食品安全与营养健康管理（餐厅）评价规范》团体标准起草工作的通知</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/14</div>
+                                    <a href="#news5" class="news-title">关于开展《食品安全与营养健康管理（餐厅）评价规范》团体标准起草工作的通知</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/12</div>
+                                    <a href="#news6" class="news-title">专精特新杰出企业"称号颁布，入驻起点云展览单元</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/11</div>
+                                    <a href="#news7" class="news-title">关于开展《食品安全与营养健康管理（餐厅）评价规范》团体标准起草工作的通知</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/11</div>
+                                    <a href="#news8" class="news-title">《食品安全与营养健康管理（餐厅）评价规范》团体标准通过评审
+                                        助力健康中国战略实施，引领行业高质量发展</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/11/17</div>
+                                    <a href="#news9" class="news-title">关于开展《食品安全与营养健康管理（餐厅）评价规范》团体标准起草工作的通知</a>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-date">2025/10/30</div>
+                                    <a href="#news10" class="news-title">关于《集中用餐单位食品安全监督管理规定》团体标准征求意见的通知</a>
+                                </div>
+                            </div>
+
+                            <!-- 分页 -->
+                            <div class="pagination">
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">下一页</a>
+                                <a href="#">末页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <p>广西省南宁市食品药品安全管理服务协会 版权所有</p>
+                        <p>地址：南宁市青秀区竹溪大道40号 邮政编码：530023</p>
+                        <p>邮箱：1013816949@qq.com</p>
+                        <p></p>
+                        <p>ICP备案：粤ICP备19001401号-1</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

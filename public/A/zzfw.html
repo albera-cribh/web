@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>在线服务 - 南宁市食品药品安全管理服务协会</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .zxyw-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部横幅 */
+        .top-banner {
+            background: #f0f0f0;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .banner-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-left img {
+            width: 80px;
+            height: 25px;
+        }
+
+        .banner-left span {
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* 网站头部 */
+        .header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 125px;
+            width: 800px;
+            margin-right: 20px;
+        }
+
+        .site-info h1 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .site-info p {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .search-box {
+            display: flex;
+        }
+
+        .search-input {
+            padding: 8px 12px;
+            border: 2px solid #004987;
+            border-radius: 4px 0 0 4px;
+            width: 200px;
+        }
+
+        .search-btn {
+            padding: 8px 20px;
+            background-color: #004987;
+            color: white;
+            border: 2px solid #004987;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* 导航菜单 */
+        .main-nav {
+            background: linear-gradient(135deg, #004987 0%, #004987 100%);
+            color: white;
+            border-bottom: 2px solid #004987;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: #1ABC9C;
+        }
+
+        /* 面包屑导航 */
+        .breadcrumb {
+            background-color: white;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #666;
+            text-align: right;
+        }
+
+        .breadcrumb a {
+            color: #004987;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #333;
+        }
+
+        /* 主要内容区域 */
+        .content-section {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .content-layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 左侧菜单 - 按照图片要求修改的样式 */
+        .left-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-menu,
+        .contact-info {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .menu-title {
+            background-color: #004987;
+            color: white;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .sub-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 左侧菜单链接样式修改 - 按照图片要求添加橙色箭头和右侧箭头 */
+        .sub-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .sub-link::before {
+            content: "▶";
+            color: #f57c00;
+            margin-right: 8px;
+            font-size: 10px;
+        }
+
+        .sub-link::after {
+            content: ">";
+            color: #999;
+        }
+
+        .sub-link:hover,
+        .sub-link.active {
+            background-color: #f5f5f5;
+            color: #004987;
+        }
+
+        /* 右侧内容区域 */
+        .right-content {
+            flex: 1;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 20px;
+            min-height: 500px;
+        }
+
+        .page-title {
+            margin: 0 0 20px 0;
+            font-size: 20px;
+            color: #004987;
+            border-bottom: 2px solid #004987;
+            padding-bottom: 10px;
+        }
+
+        /* 右侧内容区域样式 - 按照图片要求 */
+        .content-area {
+            padding: 20px 0;
+        }
+
+        /* 底部信息 */
+        .footer {
+            background-color: #004987;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        .footer-info p {
+            margin: 8px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* 版权信息 */
+        .copyright {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #0d47a1;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- 顶部横幅 -->
+    <div class="top-banner">
+        <div class="zxyw-container">
+            <div class="banner-left">
+                <span>关注食品安全 共筑健康生活</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 网站头部 -->
+    <header class="header">
+        <div class="zxyw-container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./assets/logo.jpg" alt="协会Logo">
+                    <div class="site-info">
+                        <!-- <h1>南宁市食品药品安全管理服务协会</h1>
+                        <p>Nanning Food and Drug Safety Management Service Association</p> -->
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="输入关键词...">
+                    <button class="search-btn">搜索</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航菜单 -->
+    <nav class="main-nav">
+        <div class="zxyw-container">
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">首页</a></li>
+                <li><a href="xhgk.html" class="nav-link">协会概况</a></li>
+                <li><a href="zzfg.html" class="nav-link">政策法规</a></li>
+                <li><a href="zxyw.html" class="nav-link">专项业务</a></li>
+                <li><a href="hyfc.html" class="nav-link">会议展览</a></li>
+                <li><a href="tzgg.html" class="nav-link">通知公告</a></li>
+                <li><a href="xhdt.html" class="nav-link">协会动态</a></li>
+                <li><a href="fxgl.html" class="nav-link">服务信息</a></li>
+                <li><a href="xyzh.html" class="nav-link">消费指南</a></li>
+                <li><a href="zzfw.html" class="nav-link active">在线服务</a></li>
+                <li><a href="/A/lxwm.html" class="nav-link">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <div class="zxyw-container">
+            <a href="#">首页</a> &gt; <span>在线服务</span>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <section class="content-section">
+        <div class="zxyw-container">
+            <div class="content-layout">
+                <!-- 左侧菜单 - 按照图片要求显示 -->
+                <aside class="left-sidebar">
+                    <div class="sidebar-menu">
+                        <h3 class="menu-title">在线服务</h3>
+                        <ul class="sub-menu">
+                            <li><a href="#" class="sub-link">在线查询</a></li>
+                            <li><a href="#" class="sub-link">标准咨询与下载</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- 右侧内容区域 - 按照图片要求显示 -->
+                <main class="right-content">
+                    <div class="content-area">
+                        <h2 style="color: #004987; font-size: 18px; margin-bottom: 10px;">在线查询</h2>
+                        <div
+                            style="display: flex; justify-content: flex-end; font-size: 12px; color: #666; margin-bottom: 20px;">
+                            <span>主页 &gt; 在线查询 &gt;</span>
+                        </div>
+                        <!-- 空白内容区域，与图片保持一致 -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-info">
+                    <p>南宁市食品药品安全管理服务协会 © 2025 版权所有</p>
+                    <p>地址：广西壮族自治区南宁市青秀区民族大道123号</p>
+                    <p>邮箱：info@nanningfoodsafety.org</p>
+                    <p>桂ICP备12345678号-1</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
