@@ -4,8 +4,8 @@ const path = require('path')
 module.exports = defineConfig({
   transpileDependencies: true,
   
-  // GitHub Pages需要设置为仓库名称或'/'根路径
-  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
+  // GitHub Pages需要设置为仓库名称'/web/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/web/' : '/',
   
   // 配置多页面应用
   pages: {
