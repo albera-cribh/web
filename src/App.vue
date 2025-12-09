@@ -17,7 +17,9 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
+            <a href="/" class="logo-link">
             <img src="@/assets/logo.jpg" alt="logo" loading="eager" width="800" height="125">
+            </a>
             <div class="site-info">
               <!--<h1>南宁市食品药品安全管理服务协会</h1>
               <p>Nanning Food and Drug Safety Management Service Association</p>-->
@@ -351,22 +353,25 @@
       <div class="container">
         <h3>友情链接</h3>
         <div class="links-container">
-          <a href="#" class="link-item">省人民政府</a>
-          <a href="#" class="link-item">市场监督总局</a>
-          <a href="#" class="link-item">省市场监管局</a>
-          <a href="#" class="link-item">省农业农村厅</a>
-          <a href="#" class="link-item">省卫健委</a>
-          <a href="#" class="link-item">省公安厅</a>
-          <a href="#" class="link-item">省商务厅</a>
-          <a href="#" class="link-item">省疾控中心</a>
-          <a href="#" class="link-item">省药监局</a>
-          <a href="#" class="link-item">人民网海南频道</a>
-          <a href="#" class="link-item">新华网海南频道</a>
-          <a href="#" class="link-item">中国网海南频道</a>
-          <a href="#" class="link-item">广西日报客户端</a>
-          <a href="#" class="link-item">广西省食品安全网</a>
-          <a href="#" class="link-item">广西省食品安全协会</a>
-          <a href="#" class="link-item">广西省食药监局网站</a>
+          <a href="http://www.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省人民政府</a>
+          <a href="https://scjgj.nanning.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">市场监督总局</a>
+          <a href="http://scjdglj.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省市场监管局</a>
+          <a href="http://nynct.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省农业农村厅</a>
+          <a href="https://wsjkw.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省卫健委</a>
+          <a href="http://gat.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省公安厅</a>
+          <a href="http://swt.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省商务厅</a>
+          <a href="https://www.gxcdc.org.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省疾控中心</a>
+          <a href="http://yjj.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">省药监局</a>
+          <a href="https://zm.sm-tc.cn/?src=l4uLj8XQ0JiH0Y%2BakI%2BTmtGckJLRnJHQ&r
+          estype=1&depth=18&link_type=60&wap=false&force=true&bu=web&v=1" 
+          target="_blank" rel="noopener noreferrer" 
+          class="link-item">人民网广西频道</a>
+          <a href="http://www.gx.xinhuanet.com/" target="_blank" rel="noopener noreferrer" class="link-item">新华网广西频道</a>
+          <a href="https://www.gx.chinanews.com.cn/" target="_blank" rel="noopener noreferrer" class="link-item">中国网广西频道</a>
+          <a href="https://www.gxnews.com.cn/staticmores/464/53464-1.shtml" target="_blank" rel="noopener noreferrer" class="link-item">广西日报</a>
+          <a href="https://gxfsn.org.cn/" target="_blank" rel="noopener noreferrer" class="link-item">广西省食品安全网</a>
+          <a href="https://www.gxfsn.org.cn/page10" target="_blank" rel="noopener noreferrer" class="link-item">广西省食品安全协会</a>
+          <a href="http://yjj.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer" class="link-item">广西省食药监局网站</a>
         </div>
       </div>
     </section>
