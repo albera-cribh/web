@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>服务信息 - 南宁市食品药品安全管理服务协会</title>
+    <title>特色食品 - 南宁市食品药品安全管理服务协会</title>
     <style>
         /* 全局样式 */
         body {
@@ -62,19 +62,19 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
         .logo img {
-            width: 100%;
-            max-width: 800px; 
-            height: auto;
+            width: 800px;
+            height: 125px;
+            margin-right: 20px;
         }
 
         .site-info h1 {
             margin: 0;
-            font-size: 18px;
-            color: #333;
+            font-size: 24px;
+            color: #004987;
+            font-weight: bold;
         }
 
         .site-info p {
@@ -89,9 +89,10 @@
 
         .search-input {
             padding: 8px 12px;
-            border: 1px solid #ddd;
+            border: 2px solid #004987;
             border-radius: 4px 0 0 4px;
-            width: 200px;
+            width: 250px;
+            font-size: 14px;
         }
 
         .search-btn {
@@ -101,12 +102,18 @@
             border: none;
             border-radius: 0 4px 4px 0;
             cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #0d47a1;
         }
 
         /* 导航菜单 */
         .main-nav {
-            background-color: #004987;
-            color: white;
+            background: linear-gradient(to right, #004987, #004987);
+            border-bottom: 2px solid #0d47a1;
         }
 
         .nav-menu {
@@ -118,7 +125,7 @@
 
         .nav-link {
             display: block;
-            padding: 12px 20px;
+            padding: 12px 15px;
             color: white;
             text-decoration: none;
             font-size: 14px;
@@ -137,6 +144,7 @@
             border-bottom: 1px solid #e0e0e0;
             font-size: 12px;
             color: #666;
+            text-align: right;
         }
 
         .breadcrumb a {
@@ -199,6 +207,21 @@
             text-decoration: none;
             border-bottom: 1px solid #f0f0f0;
             transition: background-color 0.3s;
+            position: relative;
+        }
+
+        .sub-link::before {
+            content: '▶';
+            color: #ff9800;
+            font-size: 10px;
+            margin-right: 8px;
+        }
+
+        .sub-link::after {
+            content: '>';
+            position: absolute;
+            right: 20px;
+            color: #999;
         }
 
         .sub-link:hover,
@@ -251,54 +274,61 @@
             color: #333;
             border-bottom: 2px solid #004987;
             padding-bottom: 10px;
+            text-align: left;
         }
 
-        /* 服务信息列表样式 */
-        .service-info-list {
+        /* 检测公告列表样式 */
+        .notice-list {
             margin-bottom: 30px;
         }
 
-        .service-info-list ul {
+        .notice-list ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        .service-info-list li {
-            padding: 15px 0;
+        .notice-list li {
+            padding: 12px 0;
             border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+            align-items: center;
         }
 
-        .service-info-list li:last-child {
+        .notice-list li:last-child {
             border-bottom: none;
         }
 
-        .service-info-list .service-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .notice-list .bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin-right: 12px;
+            flex-shrink: 0;
         }
 
-        .service-info-list .service-title {
-            flex: 1;
+        .notice-list .notice-date {
+            color: #999;
+            font-size: 14px;
             margin-right: 15px;
+            width: 80px;
+            flex-shrink: 0;
         }
 
-        .service-info-list .service-title a {
+        .notice-list .notice-title {
+            flex: 1;
+        }
+
+        .notice-list .notice-title a {
             color: #333;
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        .service-info-list .service-title a:hover {
+        .notice-list .notice-title a:hover {
             color: #004987;
             text-decoration: none;
-        }
-
-        .service-info-list .service-date {
-            color: #999;
-            font-size: 14px;
-            white-space: nowrap;
         }
 
         /* 分页 */
@@ -339,7 +369,7 @@
             text-align: center;
         }
 
-      
+       
     </style>
 </head>
 
@@ -361,7 +391,7 @@
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
-                        <img src="./assets/logo.jpg" alt="南宁市食品药品安全管理服务协会">
+                        <img src="../assets/logo.jpg" alt="南宁市食品药品安全管理服务协会">
                         <div class="site-info">
                             <!-- <h1>南宁市食品药品安全管理服务协会</h1>
                             <p>Nanning Food and Drug Safety Management Service Association</p> -->
@@ -386,8 +416,8 @@
                     <li><a href="/A/xhdt.html" class="nav-link">协会动态</a></li>
                     <li><a href="/A/hyfc.html" class="nav-link">会员风采</a></li>
                     <li><a href="/A/zzfg.html" class="nav-link">政策法规</a></li>
-                    <li><a href="/A/fxgl.html" class="nav-link active">服务信息</a></li>
-                    <li><a href="/A/xyzh.html" class="nav-link">消费指南</a></li>
+                    <li><a href="/A/fxgl.html" class="nav-link">服务信息</a></li>
+                    <li><a href="/A/xyzh.html" class="nav-link active">消费指南</a></li>
                     <li><a href="/A/zzfw.html" class="nav-link">在线服务</a></li>
                     <li><a href="/A/lxwm.html" class="nav-link">联系我们</a></li>
                 </ul>
@@ -397,7 +427,7 @@
         <!-- 面包屑导航 -->
         <div class="breadcrumb">
             <div class="container">
-                <a href="/">首页</a> &gt; <a href="/A/fxgl.html">服务信息</a> &gt;
+                <a href="/">首页</a> &gt; <a href="/A/xyzh.html">消费指南</a> &gt; <a href="特色食品.html">特色食品</a> &gt;
             </div>
         </div>
 
@@ -408,15 +438,13 @@
                     <!-- 左侧菜单 -->
                     <div class="left-sidebar">
                         <div class="sidebar-menu">
-                            <h3 class="menu-title">服务信息</h3>
+                            <h3 class="menu-title">消费指南</h3>
                             <ul class="sub-menu">
-                                <li><a href="#" class="sub-link active">会议展览</a></li>
-                                <li><a href="fwxx/培训服务.html" class="sub-link">培训服务</a></li>
-                                <li><a href="fwxx/认证咨询.html" class="sub-link">认证咨询</a></li>
-                                <li><a href="fwxx/人才科技.html" class="sub-link">人才科技</a></li>
-                                <li><a href="fwxx/融资服务.html" class="sub-link">融资服务</a></li>
-                                <li><a href="fwxx/项目合作.html" class="sub-link">项目合作</a></li>
-                                <li><a href="fwxx/法律服务.html" class="sub-link">法律服务</a></li>
+                                <li><a href="/A/xyzh.html" class="sub-link">检测公告</a></li>
+                                <li><a href="/A/xfzn/食品常识.html" class="sub-link">食品常识</a></li>
+                                <li><a href="/A/xfzn/消费预警.html" class="sub-link">消费预警</a></li>
+                                <li><a href="/A/xfzn/特色食品.html" class="sub-link active">特色食品</a></li>
+                                <li><a href="/A/xfzn/保健养生.html" class="sub-link">保健养生</a></li>
                             </ul>
                         </div>
 
@@ -424,7 +452,7 @@
                             <h3 class="menu-title">联系我们</h3>
                             <div class="contact-details">
                                 <p><strong></strong></p>
-                                <p><strong>邮箱：</strong>nnspypaqglfwxh@163.com</p>
+                                <p><strong>邮箱：</strong>nanningfoodsafety@nanning.gov.cn</p>
                                 <p><strong>地址：</strong>南宁市青秀区东葛路118号南宁青秀万达广场西3栋3419号</p>
                                 <div class="qrcode">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iMzAiIHk9IjYwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1vemlsbGEg4oCT5bCP5Li6PC90ZXh0Pjwvc3ZnPg=="
@@ -437,89 +465,79 @@
                     <!-- 右侧内容 -->
                     <div class="right-content">
                         <div class="content-box">
-                            <h2>会议展览</h2>
+                            <h2>检测公告</h2>
 
-                            <div class="service-info-list">
+                            <div class="notice-list">
                                 <ul>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2025/8/5</div>
-                                            <div class="service-title">
-                                                <a href="#">2025第三届全球食品饮料论坛在海南博鳌举办，共谋全球饮食产业新未来</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/12/2</span>
+                                        <span class="notice-title">
+                                            <a href="#">保亭县市监局关于公布整治制售假劣肉制品专项行动典型案例（第二期）</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2025/4/11</div>
-                                            <div class="service-title">
-                                                <a href="#">正式官宣：第三届全球食品饮料论坛将于5月19日至22日在博鳌举办</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/27</span>
+                                        <span class="notice-title">
+                                            <a href="#">2025年海口市制售假劣肉制品专项整治典型案例（第一批）</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/12/23</div>
-                                            <div class="service-title">
-                                                <a href="#">2022全球食品饮料论坛举办新闻发布会公布丰硕成果和2023年论坛举办时间</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/26</span>
+                                        <span class="notice-title">
+                                            <a href="#">马肉冒充驴肉、馄饨皮加硼砂遭罚 市场监管总局通报5起案例</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/12/23</div>
-                                            <div class="service-title">
-                                                <a href="#">2022全球食品饮料论坛"博鳌开讲" 为食品饮料行业现场把脉</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/25</span>
+                                        <span class="notice-title">
+                                            <a href="#">海南19批次食品被检不合格，有胡萝卜、贵妃芒、皮皮虾等</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/12/23</div>
-                                            <div class="service-title">
-                                                <a href="#">2022全球食品饮料论坛流程</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/19</span>
+                                        <span class="notice-title">
+                                            <a href="#">总局公布2025年第三批 "行风建设助力优化营商环境" 优秀实践案例</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/12/23</div>
-                                            <div class="service-title">
-                                                <a href="#">明星零距离！周杰伦御用制作人黄雨勋和环球小姐王婉霏将空降博鳌全球食品饮料论坛现场</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/18</span>
+                                        <span class="notice-title">
+                                            <a href="#">市场监管总局办公厅关于39批次食品抽检不合格情况的通报</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/6/29</div>
-                                            <div class="service-title">
-                                                <a href="#">第二十一届国际潮团联谊年会团长暨秘书长会议在海口顺利举行</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/14</span>
+                                        <span class="notice-title">
+                                            <a href="#">海南20批次食品被检不合格，有沃柑、蜂蜜、基围虾等</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/6/13</div>
-                                            <div class="service-title">
-                                                <a href="#">官宣|第106届全国糖酒商品交易会 举办日期确定</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/13</span>
+                                        <span class="notice-title">
+                                            <a href="#">守护消费丨省局公布2025 "守护消费" 铁拳行动典型案例（第十一批）</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/6/7</div>
-                                            <div class="service-title">
-                                                <a href="#">全球食品饮料论坛|海南广晟达蜂业冠花堂牌蜂蜜荣膺论坛指定蜂蜜</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/13</span>
+                                        <span class="notice-title">
+                                            <a href="#">海口6批次食用农产品抽检不合格，有大草虾、铁棍山药……</a>
+                                        </span>
                                     </li>
                                     <li>
-                                        <div class="service-item">
-                                            <div class="service-date">2022/5/25</div>
-                                            <div class="service-title">
-                                                <a href="#">全球食品饮料论坛|论坛与琼崖府酱酒签订战略合作协议</a>
-                                            </div>
-                                        </div>
+                                        <span class="bullet"></span>
+                                        <span class="notice-date">2025/11/12</span>
+                                        <span class="notice-title">
+                                            <a href="#">守护消费丨海南省 "守护知识产权" 专项执法行动（2024-2025年）典型案例（第四批）</a>
+                                        </span>
                                     </li>
                                 </ul>
                             </div>
@@ -531,7 +549,8 @@
                                 <a href="#">3</a>
                                 <a href="#">4</a>
                                 <a href="#">5</a>
-                                <a href="#">下一页</a>
+                                <a href="#">›</a>
+                                <a href="#">››</a>
                             </div>
                         </div>
                     </div>
@@ -542,11 +561,14 @@
         <!-- 底部信息 -->
         <footer class="footer">
             <div class="container">
-                <div class="footer-info">
-                    <p>南宁市食品药品安全管理服务协会 © 2025 版权所有</p>
-                    <p>地址：广西壮族自治区南宁市青秀区民族大道123号</p>
-                    <p> | 邮箱：info@nanningfoodsafety.org</p>
-                    <p>桂ICP备12345678号-1</p>
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <p>南宁市食品药品安全管理服务协会 版权所有</p>
+                        <p>地址：南宁市青秀区东葛路118号南宁青秀万达广场西3栋3419号 邮政编码：530000</p>
+                        <p>  邮箱：nnspypaqglfwxh@163.com</p>
+                        
+                        <p>ICP备案：桂ICP备xxxxxx号-1</p>
+                    </div>
                 </div>
             </div>
         </footer>
