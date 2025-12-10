@@ -4,8 +4,8 @@ const path = require('path')
 module.exports = defineConfig({
   transpileDependencies: true,
   
-  // 本地运行时使用相对路径
-  publicPath: './',
+  // GitHub Pages子目录部署，设置正确的publicPath
+  publicPath: '/web/',
   
   // 配置多页面应用
   pages: {
