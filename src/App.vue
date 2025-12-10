@@ -98,21 +98,21 @@
       </div>
     </section>
 
-    <!-- 主要内容区域 -->
+     <!-- 主要内容区域 -->
     <section class="content-section">
       <div class="container">
-        <!-- 第一行内容 -->
+        <!-- 第一行内容 - 修改为单列布局 -->
         <div class="content-grid">
-          <!-- 最新要闻 -->
-          <div class="content-column">
+          <!-- 最新要闻 - 修改为占据整行 -->
+          <div class="content-column full-width">
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>最新要闻</h3>
-              <a href="#more-news" class="more-link">MORE...</a>
+              <a href="/A/zxyw.html" class="more-link">MORE...</a>
             </div>
             <div class="news-feature">
-              <!-- 图片轮播区域 -->
-              <div class="news-carousel-container">
+              <!-- 图片轮播区域 - 修改为占一半宽度 -->
+              <div class="news-carousel-container half-width">
                 <div class="news-carousel-wrapper">
                   <div class="news-carousel-items" ref="newsCarouselItems">
                     <a href="#" class="news-carousel-item">
@@ -137,52 +137,10 @@
                 </div>
               </div>
               <!-- 文字区域 -->
-              <div class="news-items">
+              <div class="news-items half-width">
                 <a href="#" class="news-item">携手缅甸贸易中心！南宁食药协会共筑中缅安全贸易新通道</a>
                 <a href="#" class="news-item">2025年全国食品安全宣传周南宁活动启动</a>
                 <a href="#" class="news-item">广西"放心月饼"暨特色食品中秋嘉年华·小红书联动计划启动！</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 视频播报 -->
-          <div class="content-column">
-            <div class="section-header">
-              <span class="section-icon"></span>
-              <h3>视频播报</h3>
-              <a href="#more-videos" class="more-link">MORE...</a>
-            </div>
-            <div class="video-carousel-container">
-              <div class="video-carousel-wrapper">
-                <div class="video-carousel-items" ref="videoCarouselItems">
-                  <a href="#" class="video-carousel-item">
-                    <img src="/A/news/视频1.jpg" alt="食品安全培训视频" loading="lazy" width="300" height="200">
-                    <div class="video-info">
-                      <p>食品安全培训视频：食品生产规范</p>
-                    </div>
-                  </a>
-                  <a href="#" class="video-carousel-item">
-                    <img src="/A/news/视频2.jpg" alt="餐饮服务标准讲解" loading="lazy" width="300" height="200">
-                    <div class="video-info">
-                      <p>餐饮服务标准讲解：卫生管理要求</p>
-                    </div>
-                  </a>
-                  <a href="#" class="video-carousel-item">
-                    <img src="/A/news/视频3.jpg" alt="食品安全检测技术" loading="lazy" width="300" height="200">
-                    <div class="video-info">
-                      <p>食品安全检测技术：快速检测方法</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <!-- 轮播图指示器 -->
-              <div class="video-carousel-indicators">
-                <span class="video-indicator" :class="{ active: currentVideoSlide === 0 }"
-                  @click="goToVideoSlide(0)"></span>
-                <span class="video-indicator" :class="{ active: currentVideoSlide === 1 }"
-                  @click="goToVideoSlide(1)"></span>
-                <span class="video-indicator" :class="{ active: currentVideoSlide === 2 }"
-                  @click="goToVideoSlide(2)"></span>
               </div>
             </div>
           </div>
@@ -214,7 +172,7 @@
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>会员风采</h3>
-              <a href="#more-members" class="more-link">MORE...</a>
+              <a href="/A/hyfc.html" class="more-link">MORE...</a>
             </div>
             <div class="member-scroll-container" ref="memberScrollContainer">
               <div class="member-scroll-wrapper" ref="memberScrollWrapper">
@@ -233,7 +191,7 @@
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>协会动态</h3>
-              <a href="#more-activities" class="more-link">MORE...</a>
+              <a href="/A/xhdt.html" class="more-link">MORE...</a>
             </div>
             <div class="activity-items">
               <a href="#" class="activity-item">协会成功举办《食品安全法》《食品安全生产经营管理规范》专题培训</a>
@@ -248,7 +206,7 @@
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>通知公告</h3>
-              <a href="#more-announcements" class="more-link">MORE...</a>
+              <a href="/A/tzgg.html" class="more-link">MORE...</a>
             </div>
             <div class="announcement-items">
               <a href="#" class="announcement-item">关于开展食品抽检抽测及产品风险快速识别培训的通知</a>
@@ -267,7 +225,7 @@
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>消费指南</h3>
-              <a href="#more-guides" class="more-link">MORE...</a>
+              <a href="/A/xyzh.html" class="more-link">MORE...</a>
             </div>
             <div class="guide-items">
               <a href="#" class="guide-item">反季节水果的营养价值如何？</a>
@@ -283,7 +241,7 @@
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>服务信息</h3>
-              <a href="#more-services" class="more-link">MORE...</a>
+              <a href="/A/fxgl.html" class="more-link">MORE...</a>
             </div>
             <div class="service-info-items">
               <a href="#" class="service-info-item">水中常见污染物有哪些？戴村河水质背景干净、经检测外其他...</a>
@@ -299,7 +257,7 @@
             <div class="section-header">
               <span class="section-icon"></span>
               <h3>政策法规</h3>
-              <a href="#more-policies" class="more-link">MORE...</a>
+              <a href="/A/zzfg.html" class="more-link">MORE...</a>
             </div>
             <div class="policy-items">
               <a href="#" class="policy-item">国家：食品生产企业监督检查（20号令）——官方解读！</a>
@@ -445,7 +403,7 @@ export default {
       isPageVisible: true,
     }
   },
-  mounted() {
+ mounted() {
     // 添加页面可见性监听
     this.setupVisibilityListener();
     
@@ -455,7 +413,7 @@ export default {
         this.initCarousel();
         this.initAdCarousel();
         this.startNewsCarousel();
-        this.startVideoCarousel();
+        // 删除视频轮播相关代码
         this.startMemberScrolling();
       });
     }, 100);
@@ -502,52 +460,24 @@ export default {
       }
     },
     
-    handleVisibilityChange() {
+      handleVisibilityChange() {
       this.isPageVisible = !document.hidden;
+      
       if (this.isPageVisible) {
-        // 页面可见时恢复轮播
-        this.resumeCarousels();
+        // 重启所有轮播
+        if (!this.carouselInterval) {
+          this.initCarousel();
+        }
+        if (!this.newsCarouselInterval) {
+          this.startNewsCarousel();
+        }
+        // 删除视频轮播相关代码
+        if (!this.adCarouselInterval) {
+          this.initAdCarousel();
+        }
       } else {
-        // 页面不可见时暂停轮播以节省资源
-        this.pauseCarousels();
-      }
-    },
-    
-    // 暂停所有轮播
-    pauseCarousels() {
-      if (this.carouselInterval) {
-        clearInterval(this.carouselInterval);
-        this.carouselInterval = null;
-      }
-      if (this.newsCarouselInterval) {
-        clearInterval(this.newsCarouselInterval);
-        this.newsCarouselInterval = null;
-      }
-      if (this.videoCarouselInterval) {
-        clearInterval(this.videoCarouselInterval);
-        this.videoCarouselInterval = null;
-      }
-      if (this.adCarouselInterval) {
-        clearInterval(this.adCarouselInterval);
-        this.adCarouselInterval = null;
-      }
-    },
-    
-    // 恢复所有轮播
-    resumeCarousels() {
-      if (!this.carouselInterval && this.isPageVisible) {
-        this.carouselInterval = setInterval(() => {
-          this.nextSlide();
-        }, this.scrollSpeed);
-      }
-      if (!this.newsCarouselInterval && this.isPageVisible) {
-        this.startNewsCarousel();
-      }
-      if (!this.videoCarouselInterval && this.isPageVisible) {
-        this.startVideoCarousel();
-      }
-      if (!this.adCarouselInterval && this.isPageVisible) {
-        this.initAdCarousel();
+        // 暂停所有轮播
+        this.cleanupIntervals();
       }
     },
     
@@ -557,7 +487,7 @@ export default {
         this.carouselInterval,
         this.adCarouselInterval,
         this.newsCarouselInterval,
-        this.videoCarouselInterval,
+        // 删除视频轮播相关代码
         this.memberScrollInterval
       ];
       
@@ -567,7 +497,6 @@ export default {
         }
       });
     },
-
     goToXhgk() {
       window.location.href = '/A/xhgk';
     },
@@ -712,34 +641,7 @@ export default {
       }
     },
 
-    // 视频播报轮播图方法 - 优化性能
-    startVideoCarousel() {
-      if (this.isPageVisible) {
-        this.videoCarouselInterval = setInterval(() => {
-          this.nextVideoSlide();
-        }, 5000); // 增加间隔时间
-      }
-    },
     
-    nextVideoSlide() {
-      requestAnimationFrame(() => {
-        this.currentVideoSlide = (this.currentVideoSlide + 1) % this.totalVideoSlides;
-        this.updateVideoCarouselPosition();
-      });
-    },
-    
-    goToVideoSlide(index) {
-      this.currentVideoSlide = index;
-      this.updateVideoCarouselPosition();
-    },
-    
-    updateVideoCarouselPosition() {
-      const items = this.$refs.videoCarouselItems;
-      if (items) {
-        items.style.transform = `translateX(-${this.currentVideoSlide * 100}%)`;
-      }
-    },
-
     // 会员风采逐条滚动方法 - 优化性能
     startMemberScrolling() {
       this.$nextTick(() => {
@@ -1121,23 +1023,20 @@ body {
 /* 新闻轮播图指示器 */
 .news-carousel-indicators {
   position: absolute;
-  bottom: 50px;
+  bottom: 15px;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; /* 居中显示 */
   gap: 8px;
   z-index: 10;
-  padding-left: 470px;
-  /* 添加左边距，让指示器不贴边 */
-
 }
 
 .news-indicator {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -1148,15 +1047,6 @@ body {
   width: 16px;
   border-radius: 4px;
 }
-
-
-
-
-
-
-
-
-
 
 /* 快捷服务区域 */
 .quick-services {
@@ -1197,6 +1087,13 @@ body {
   padding: 30px 0;
   background: #f9f9f9;
 }
+
+
+/* 全宽内容列样式 */
+.content-column.full-width {
+  grid-column: 1 / -1;
+}
+
 
 .content-grid {
   display: grid;
@@ -1303,17 +1200,30 @@ body {
   align-items: stretch;
 }
 
-.news-carousel-container {
-  flex: 0 0 200px;
+/* 新增：各占一半宽度的布局样式 */
+.half-width {
+  flex: 0 0 calc(50% - 15px);
+}
+
+.news-carousel-container.half-width {
   overflow: hidden;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 200px; /* 增加高度以匹配文字区域 */
+}
+
+.news-items.half-width {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px; /* 增加高度以匹配轮播图区域 */
 }
 
 .news-carousel-wrapper {
   width: 100%;
-  height: 150px;
+  height: 200px; /* 增加高度 */
   overflow: hidden;
+  position: relative;
 }
 
 .news-carousel-items {
@@ -1341,12 +1251,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 150px;
+  height: 200px; /* 增加高度 */
 }
 
 .news-item {
   display: block;
-  padding: 0;
+  padding: 10px 0;
   border-bottom: 1px solid #eee;
   text-decoration: none;
   color: #333;
@@ -1355,12 +1265,14 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
-  min-height: 30px;
+  min-height: 40px; /* 增加最小高度 */
 }
 
 .news-item:hover {
   color: #1565c0;
   background-color: #f5f5f5;
+  padding-left: 10px;
+  transition: all 0.3s ease;
 }
 
 .news-item:last-child {
